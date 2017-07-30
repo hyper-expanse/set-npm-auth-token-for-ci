@@ -193,7 +193,7 @@ release:
   before_script:
     - yarn install --frozen-lockfile
   only:
-    - master@hyper-expanse/npm-publish-git-tag
+    - master@hyper-expanse/set-npm-auth-token-for-ci
   script:
     - $(yarn bin)/semantic-release-gitlab
   stage: release
