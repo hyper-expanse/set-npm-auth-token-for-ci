@@ -1,5 +1,5 @@
 {
-  "labels": ["refactor"],
-  "pinVersions": false,
-  "semanticCommits": true
+  "pinVersions": true,
+  "semanticCommits": true,
+  "depTypes": [{"depType": "dependencies", "pinVersions": false}]
 }
