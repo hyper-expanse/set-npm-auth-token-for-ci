@@ -691,8 +691,8 @@ conventional-commits-parser@^2.0.0:
     trim-off-newlines "^1.0.0"
 
 conventional-gitlab-releaser@^2.0.4:
-  version "2.0.20"
-  resolved "https://registry.yarnpkg.com/conventional-gitlab-releaser/-/conventional-gitlab-releaser-2.0.20.tgz#c67f4c757fbbb07be9c52981252dd3f92db3c75f"
+  version "2.0.21"
+  resolved "https://registry.yarnpkg.com/conventional-gitlab-releaser/-/conventional-gitlab-releaser-2.0.21.tgz#047a282339523835e6b77830c4961dea21585399"
   dependencies:
     conventional-changelog "^1.1.0"
     dateformat "^2.0.0"
@@ -942,8 +942,8 @@ eslint-scope@^3.7.1:
     estraverse "^4.1.1"
 
 eslint@^4.0.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.4.0.tgz#a3e153e704b64f78290ef03592494eaba228d3bc"
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.4.1.tgz#99cd7eafcffca2ff99a5c8f5f2a474d6364b4bd3"
   dependencies:
     ajv "^5.2.0"
     babel-code-frame "^6.22.0"
@@ -2245,8 +2245,8 @@ normalize-path@^2.0.1:
     remove-trailing-separator "^1.0.1"
 
 npm-publish-git-tag@^1.0.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/npm-publish-git-tag/-/npm-publish-git-tag-1.1.5.tgz#2c907ad1e2f7db10d173e3c9177f63a6ce8340e5"
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/npm-publish-git-tag/-/npm-publish-git-tag-1.1.6.tgz#9a61db6ec40812b1c6fb3cc34dc657016f77a9a3"
   dependencies:
     bluebird "^3.5.0"
     commander "^2.9.0"
@@ -2836,8 +2836,8 @@ scoped-regex@^1.0.0:
   resolved "https://registry.yarnpkg.com/scoped-regex/-/scoped-regex-1.0.0.tgz#a346bb1acd4207ae70bd7c0c7ca9e566b6baddb8"
 
 semantic-release-gitlab-notifier@^5.0.0:
-  version "5.1.11"
-  resolved "https://registry.yarnpkg.com/semantic-release-gitlab-notifier/-/semantic-release-gitlab-notifier-5.1.11.tgz#c86fc4464f2b0407669d5c741f23de9aec1d9ca8"
+  version "5.1.12"
+  resolved "https://registry.yarnpkg.com/semantic-release-gitlab-notifier/-/semantic-release-gitlab-notifier-5.1.12.tgz#85b80ca781dfe8b0e9fb56edb35cbe367584c5d9"
   dependencies:
     bluebird "^3.4.1"
     conventional-commits-parser "^2.0.0"
@@ -2923,12 +2923,12 @@ silent-npm-registry-client@0.0.0:
     xtend "~2.0.6"
 
 sinon-chai@^2.12.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/sinon-chai/-/sinon-chai-2.12.0.tgz#da71e9642ef7b893ba3cf2af806396a00aa45927"
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/sinon-chai/-/sinon-chai-2.13.0.tgz#b9a42e801c20234bfc2f43b29e6f4f61b60990c4"
 
 sinon@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/sinon/-/sinon-3.0.0.tgz#f6919755c8c705e0b4ae977e8351bbcbaf6d91de"
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/sinon/-/sinon-3.2.0.tgz#8848a66ab6e8b80b5532e3824f59f83ea2628c77"
   dependencies:
     diff "^3.1.0"
     formatio "1.2.0"
