@@ -17,7 +17,15 @@ function setNpmAuthTokenForCI(fs, registryUrl) {
   const packageContents = JSON.parse(fs.readFileSync(path.join(process.cwd(), `package.json`)).toString());
 
   const npmrcFile = localOrHomeNpmrc();
-  const contents = fs.readFileSync(npmrcFile).toString();
+  let contents = '';
+
+  // Attempt to read the `.npmrc` file. `local-or-home-npmrc` will always return back a path to the user's `~/.npmrc`
+  // file if no `.npmrc` file exists locally or in the user's home directory. So let's try reading the path provided
+  // by `local-or-home-npmrc`, and if that fails, ignore the error, assume an empty file, and then write to
+  // that file later.
+  try {
+    contents = fs.readFileSync(npmrcFile).toString();
+  } catch (error) {}
 
   // If set, prefer the value of the `packageConfig.registry` property over the value of the registry as set
   // in the user's `.npmrc` file.

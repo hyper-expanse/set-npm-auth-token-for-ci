@@ -138,5 +138,14 @@ describe(`semantic-release-gitlab`, function () {
       this.wrapped();
       expect(this.fs.writeFileSync).to.have.been.calledWith(this.npmrcFile, `\n//example.com/:_authToken=\${NPM_TOKEN}\n`);
     });
+
+    it(`will create a new '.npmrc' file if one doesn't already exist'`, function () {
+      this.fs.readFileSync
+        .withArgs(this.npmrcFile)
+        .throws(new Error(`ENOENT: no such file or directory, open '.npmrc'`));
+
+      this.wrapped();
+      expect(this.fs.writeFileSync).to.have.been.calledWith(this.npmrcFile, `\n//registry.npmjs.org/:_authToken=\${NPM_TOKEN}\n`);
+    });
   });
 });
