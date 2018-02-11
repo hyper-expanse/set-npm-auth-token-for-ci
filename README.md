@@ -1,7 +1,7 @@
 # set-npm-auth-token-for-ci
 
 [![build status](https://gitlab.com/hyper-expanse/set-npm-auth-token-for-ci/badges/master/build.svg)](https://gitlab.com/hyper-expanse/set-npm-auth-token-for-ci/commits/master)
-[![codecov.io](https://codecov.io/gitlab/hyper-expanse/set-npm-auth-token-for-ci/coverage.svg?branch=master)](https://codecov.io/gitlab/hyper-expanse/set-npm-auth-token-for-ci?branch=master)
+[![codecov](https://codecov.io/gl/hyper-expanse/set-npm-auth-token-for-ci/branch/master/graph/badge.svg)](https://codecov.io/gl/hyper-expanse/set-npm-auth-token-for-ci)
 
 > Set authentication token placeholder into `.npmrc` file for use in automated CI processes.
 
@@ -35,18 +35,25 @@ For example, if the package is configured to use the our example npm registry, t
 
 When `npm` or `yarn` need to authenticate, they retrieve the value assigned to `_authToken`, which is `${NPM_TOKEN}`, and then replace `${NPM_TOKEN}` with the value of the `NPM_TOKEN` environment variable.
 
+## Table of Contents
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Debugging](#debugging)
+- [Node Support Policy](#node-support-policy)
+- [Contributing](#contributing)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Installation
 
 To install the `set-npm-auth-token-for-ci` tool for use in your project please run the following command:
 
 ```bash
-yarn add --dev set-npm-auth-token-for-ci
-```
-
-If you are using the `npm` package manager:
-
-```bash
-npm install --save-dev set-npm-auth-token-for-ci
+yarn add [--dev] set-npm-auth-token-for-ci
 ```
 
 ## Usage
@@ -63,21 +70,31 @@ To write the authentication token placeholder, invoke the imported function:
 setNpmAuthTokenForCI();
 ```
 
+If an issue is encountered while writing to the `.npmrc` file, an exception will be thrown. Consider wrapping `setNpmAuthTokenForCI` in a `try`/`catch`.
+
+```javascript
+try {
+  setNpmAuthTokenForCI();
+} catch (error) {
+  /* Handle the error. */
+}
+```
+
 ## Debugging
 
 To assist users of `set-npm-auth-token-for-ci` with debugging the behavior of this module we use the [debug](https://www.npmjs.com/package/debug) utility package to print information to the console. To enable debug message printing, the environment variable `DEBUG`, which is the variable used by the `debug` package, must be set to a value configured by the package containing the debug messages to be printed.
 
-To print debug messages on a unix system set the environment variable `DEBUG` with the name of this package prior to executing `set-npm-auth-token-for-ci`:
+To print debug messages on a unix system set the environment variable `DEBUG` with the name of this package prior to executing a tool that invokes this module:
 
 ```bash
-DEBUG=set-npm-auth-token-for-ci set-npm-auth-token-for-ci
+DEBUG=set-npm-auth-token-for-ci [CONSUMING TOOL]
 ```
 
 On the Windows command line you may do:
 
 ```bash
 set DEBUG=set-npm-auth-token-for-ci
-set-npm-auth-token-for-ci
+[CONSUMING TOOL]
 ```
 
 ## Node Support Policy
