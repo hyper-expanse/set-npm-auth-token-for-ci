@@ -1,8 +1,5 @@
 # set-npm-auth-token-for-ci
 
-[![build status](https://gitlab.com/hyper-expanse/set-npm-auth-token-for-ci/badges/master/build.svg)](https://gitlab.com/hyper-expanse/set-npm-auth-token-for-ci/commits/master)
-[![codecov](https://codecov.io/gl/hyper-expanse/set-npm-auth-token-for-ci/branch/master/graph/badge.svg)](https://codecov.io/gl/hyper-expanse/set-npm-auth-token-for-ci)
-
 > Set authentication token placeholder into `.npmrc` file for use in automated CI processes.
 
 When you need to authenticate with a package registry using the `npm` or `yarn` package manager, and you are authenticating with that registry from within a Continuous Integration environment, you are strongly encouraged to use an [authentication token placeholder](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules).
@@ -113,4 +110,4 @@ JavaScript package managers should allow you to install this package with any ve
 
 ## Contributing
 
-Please read our [contributing guide](https://gitlab.com/hyper-expanse/set-npm-auth-token-for-ci/blob/master/CONTRIBUTING.md) to see how you may contribute to this project.
+Please read our [contributing guide](https://gitlab.com/hyper-expanse/open-source/set-npm-auth-token-for-ci/blob/master/CONTRIBUTING.md) to see how you may contribute to this project.

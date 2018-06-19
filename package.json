@@ -5,7 +5,7 @@
     "url": "https://gitlab.com/hutson"
   },
   "bin": "",
-  "bugs": "https://gitlab.com/hyper-expanse/set-npm-auth-token-for-ci/issues",
+  "bugs": "https://gitlab.com/hyper-expanse/open-source/set-npm-auth-token-for-ci/issues",
   "description": "Set authentication token placeholder into `.npmrc` file for use in automated CI processes.",
   "engines": {
     "node": ">=6.9.0"
@@ -13,7 +13,7 @@
   "files": [
     "src/"
   ],
-  "homepage": "https://gitlab.com/hyper-expanse/set-npm-auth-token-for-ci#readme",
+  "homepage": "https://gitlab.com/hyper-expanse/open-source/set-npm-auth-token-for-ci#readme",
   "keywords": [
     "automation",
     "npmrc",
@@ -26,7 +26,7 @@
   "name": "set-npm-auth-token-for-ci",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/hyper-expanse/set-npm-auth-token-for-ci.git"
+    "url": "https://gitlab.com/hyper-expanse/open-source/set-npm-auth-token-for-ci.git"
   },
   "scripts": {
     "dev": "docker run --rm --user node -v \"$(pwd)\":/app -w /app -it node:4 sh -c \"yarn install; yarn test; bash\"",
