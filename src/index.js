@@ -10,10 +10,6 @@ module.exports = () => setNpmAuthTokenForCI(fs, registryUrl);
 module.exports.setNpmAuthTokenForCI = setNpmAuthTokenForCI;
 
 function setNpmAuthTokenForCI(fs, registryUrl) {
-  if (!process.env.NPM_TOKEN) {
-    throw new Error(`Cannot find NPM_TOKEN set in your environment.`);
-  }
-
   const packageContents = JSON.parse(fs.readFileSync(path.join(process.cwd(), `package.json`)).toString());
 
   const npmrcFile = localOrHomeNpmrc();

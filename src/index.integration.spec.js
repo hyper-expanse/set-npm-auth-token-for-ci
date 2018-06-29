@@ -8,17 +8,15 @@ const mocha = require(`mocha`);
 const path = require(`path`);
 const sinon = require(`sinon`);
 const sinonChai = require(`sinon-chai`);
-const nock = require('nock');
 const tmp = require(`tmp`);
 
-const setNpmAuthTokenForCIPackage = require(`./index`);
+const setNpmAuthTokenForCIPackage = require(`../`);
 const setNpmAuthTokenForCI = setNpmAuthTokenForCIPackage.setNpmAuthTokenForCI;
 
 chai.use(sinonChai);
 var expect = chai.expect;
 
 const afterEach = mocha.afterEach;
-const before = mocha.before;
 const beforeEach = mocha.beforeEach;
 const describe = mocha.describe;
 const it = mocha.it;
@@ -27,19 +25,12 @@ describe(`semantic-release-gitlab`, function () {
   // Setting up our fake project takes longer than the default Mocha timeout.
   this.timeout(20000);
 
-  before(function () {
-    nock.disableNetConnect();
-  });
-
   beforeEach(function () {
     // Switch into a temporary directory to isolate the behavior of this tool from
     // the rest of the environment.
     this.cwd = process.cwd();
     this.tmpDir = tmp.dirSync();
     process.chdir(this.tmpDir.name);
-
-    this.oldToken = process.env.NPM_TOKEN;
-    process.env.NPM_TOKEN = `token`;
 
     // Create a stub for the `fs` module that we can pass to `setNpmAuthTokenForCI`. We want to stub
     // filesystem calls, in particular writes, so that we're not exposing the user's home directory to
@@ -56,23 +47,7 @@ describe(`semantic-release-gitlab`, function () {
   });
 
   afterEach(function () {
-    process.env.NPM_TOKEN = this.oldToken;
     process.chdir(this.cwd);
-  });
-
-  it(`will fail fast from the package entry point if NPM_TOKEN is not set in the environment`, function () {
-    delete process.env.NPM_TOKEN;
-
-    // Ensures our main execution path is connected correctly to the method containing all the functionality.
-    expect(setNpmAuthTokenForCIPackage).to.throw(Error, `Cannot find NPM_TOKEN set in your environment.`);
-  });
-
-  it(`will fail fast if NPM_TOKEN is not set in the environment`, function () {
-    // Fail fast by checking existence of `NPM_TOKEN`, before any file operations take place.
-    delete process.env.NPM_TOKEN;
-    expect(this.wrapped).to.throw(Error);
-    expect(this.fs.readFileSync).to.not.have.been.called;
-    expect(this.fs.writeFileSync).to.not.have.been.called;
   });
 
   it(`will fail when no 'package.json' file exists`, function () {
