@@ -14,7 +14,7 @@ const setNpmAuthTokenForCIPackage = require(`../`);
 const setNpmAuthTokenForCI = setNpmAuthTokenForCIPackage.setNpmAuthTokenForCI;
 
 chai.use(sinonChai);
-var expect = chai.expect;
+const expect = chai.expect;
 
 const afterEach = mocha.afterEach;
 const beforeEach = mocha.beforeEach;
@@ -55,7 +55,7 @@ describe(`semantic-release-gitlab`, function () {
     expect(this.fs.writeFileSync).to.not.have.been.called;
   });
 
-  describe(`local project '.npmrc' file`, function () {
+  describe(`local project '.npmrc' file`, () => {
     beforeEach(function () {
       // Write out `.npmrc` file into local test directory so that `local-or-home-npmrc`
       // will return a path to that `.npmrc` file, instead of the user's `.npmrc` file.

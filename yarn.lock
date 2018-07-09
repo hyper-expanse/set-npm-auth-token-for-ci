@@ -2,6 +2,7 @@
 # yarn lockfile v1
 
 
+<<<<<<< HEAD
 "@babel/code-frame@7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0-beta.51.tgz#bd71d9b192af978df915829d39d4094456439a0c"
@@ -82,6 +83,15 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
+||||||| merged common ancestors
+=======
+"@hbetts/eslint-config@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@hbetts/eslint-config/-/eslint-config-1.0.1.tgz#9c36357f27c303762275151135703992c864a0e8"
+  dependencies:
+    eslint-config-xo-space "^0.18.0"
+
+>>>>>>> chore(eslint): switch to custom ESLint config
 "@hbetts/nyc-config@^1.0.2":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@hbetts/nyc-config/-/nyc-config-1.0.7.tgz#e707b5fd71c2aac863b16e7fd10a60a79712d2e4"
