@@ -2354,15 +2354,15 @@ normalize-package-data@^2.3.0, normalize-package-data@^2.3.2, normalize-package-
     semver "2 || 3 || 4 || 5"
     validate-npm-package-license "^3.0.1"
 
-npm-publish-git-tag@^1.0.5:
-  version "1.1.43"
-  resolved "https://registry.yarnpkg.com/npm-publish-git-tag/-/npm-publish-git-tag-1.1.43.tgz#42a4647d9091f484c179a9cbc9bce6befbe720e7"
+npm-publish-git-tag@^2.0.0:
+  version "2.1.13"
+  resolved "https://registry.yarnpkg.com/npm-publish-git-tag/-/npm-publish-git-tag-2.1.13.tgz#f876d063fd86f1460b8329af4c109c6a3c6436e8"
   dependencies:
     bluebird "^3.5.0"
     commander "^2.9.0"
     git-latest-semver-tag "^1.0.2"
     is-scoped "^1.0.0"
-    read-pkg "^3.0.0"
+    read-pkg "^4.0.0"
     set-npm-auth-token-for-ci "^1.0.14"
     shelljs "^0.8.0"
     write-pkg "^3.0.1"
@@ -2712,6 +2712,14 @@ read-pkg@^3.0.0:
     load-json-file "^4.0.0"
     normalize-package-data "^2.3.2"
     path-type "^3.0.0"
+
+read-pkg@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/read-pkg/-/read-pkg-4.0.1.tgz#963625378f3e1c4d48c85872b5a6ec7d5d093237"
+  dependencies:
+    normalize-package-data "^2.3.2"
+    parse-json "^4.0.0"
+    pify "^3.0.0"
 
 readable-stream@^2.1.5, readable-stream@^2.2.2:
   version "2.3.6"
