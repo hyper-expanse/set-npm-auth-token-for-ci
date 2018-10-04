@@ -4,22 +4,17 @@
 
 const chai = require(`chai`);
 const fs = require(`fs`);
-const mocha = require(`mocha`);
+const {afterEach, beforeEach, describe, it} = require(`mocha`);
 const path = require(`path`);
 const sinon = require(`sinon`);
 const sinonChai = require(`sinon-chai`);
 const tmp = require(`tmp`);
 
 const setNpmAuthTokenForCIPackage = require(`../`);
-const setNpmAuthTokenForCI = setNpmAuthTokenForCIPackage.setNpmAuthTokenForCI;
+const {setNpmAuthTokenForCI} = setNpmAuthTokenForCIPackage;
 
 chai.use(sinonChai);
-const expect = chai.expect;
-
-const afterEach = mocha.afterEach;
-const beforeEach = mocha.beforeEach;
-const describe = mocha.describe;
-const it = mocha.it;
+const {expect} = chai;
 
 describe(`semantic-release-gitlab`, function () {
   // Setting up our fake project takes longer than the default Mocha timeout.
