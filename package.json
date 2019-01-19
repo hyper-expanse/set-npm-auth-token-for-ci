@@ -4,7 +4,7 @@
     "email": "hutson@hyper-expanse.net",
     "url": "https://gitlab.com/hutson"
   },
-  "bin": "./src/cli.js",
+  "bin": "",
   "bugs": "https://gitlab.com/hyper-expanse/open-source/set-npm-auth-token-for-ci/issues",
   "description": "Set authentication token placeholder into `.npmrc` file for use in automated CI processes.",
   "engines": {
@@ -34,7 +34,6 @@
   },
   "version": "1.0.0",
   "dependencies": {
-    "commander": "^2.19.0",
     "debug": "^4.0.0",
     "local-or-home-npmrc": "^1.1.0",
     "registry-url": "^4.0.0"
@@ -50,7 +49,6 @@
     "npm-publish-git-tag": "^3.0.0",
     "nyc": "^13.0.0",
     "semantic-release-gitlab": "^7.0.0",
-    "shelljs": "^0.8.3",
     "sinon": "^7.0.0",
     "sinon-chai": "^3.2.0",
     "tmp": "^0.0.33"

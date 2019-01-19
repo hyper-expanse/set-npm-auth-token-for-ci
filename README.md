@@ -9,6 +9,9 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
+  - [CLI Tool](#cli-tool)
+  - [Programmatically](#programmatically)
+  - [How It Works](#how-it-works)
 - [Debugging](#debugging)
 - [Node Support Policy](#node-support-policy)
 - [Contributing](#contributing)
@@ -20,12 +23,37 @@
 To install the `set-npm-auth-token-for-ci` tool for use in your project please run the following command:
 
 ```bash
-yarn [global] add [--dev] @hutson/set-npm-auth-token-for-ci
+yarn add [--dev] @hutson/set-npm-auth-token-for-ci
 ```
 
-> **Note:** Whether you install the package globally, as a runtime dependency, or a development dependency, depends on how you plan to use this package. If you are planning to use the CLI from this package to set auth tokens for multiple projects, consider a global installation. Otherwise, consider adding this package as a dependency on the project for which it will be used.
+> **Note:** Whether you install the package as a runtime dependency, or a development dependency, depends on how you plan to use this package.
 
 ## Usage
+
+### CLI Tool
+
+Please see our documentation for the [`@hutson/set-npm-auth-token-for-ci-cli`](https://www.npmjs.com/package/@hutson/set-npm-auth-token-for-ci-cli) command line tool.
+
+### Programmatically
+
+```javascript
+const setNpmAuthTokenForCI = require(`@hutson/set-npm-auth-token-for-ci`);
+
+// To write the authentication token placeholder, invoke the imported function:
+setNpmAuthTokenForCI();
+```
+
+If an issue is encountered while writing to the `.npmrc` file, an exception will be thrown. Consider wrapping `setNpmAuthTokenForCI` in a `try`/`catch`.
+
+```javascript
+try {
+  setNpmAuthTokenForCI();
+} catch (error) {
+  /* Handle the error. */
+}
+```
+
+### How It Works
 
 When you need to authenticate with an npm-compatible package registry using the `npm` or `yarn` package manager, and you are authenticating with that registry from within a Continuous Integration environment, you are strongly encouraged to use an [authentication token placeholder](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules).
 
@@ -57,39 +85,6 @@ For example, if the package is configured to use our example npm registry, the p
 
 When `npm` or `yarn` need to authenticate, they retrieve the value assigned to `_authToken`, which is `${NPM_TOKEN}`, and then replace `${NPM_TOKEN}` with the value of the `NPM_TOKEN` environment variable.
 
-**CLI Tool**
-
-After you've installed `set-npm-auth-token-for-ci`, you can call the tool based on whether you installed it globally or locally:
-
-_Globally_
-```bash
-set-npm-auth-token-for-ci
-```
-
-_Locally_
-```bash
-$(yarn bin)/set-npm-auth-token-for-ci
-```
-
-**Programmatically**
-
-```javascript
-const setNpmAuthTokenForCI = require(`@hutson/set-npm-auth-token-for-ci`);
-
-// To write the authentication token placeholder, invoke the imported function:
-setNpmAuthTokenForCI();
-```
-
-If an issue is encountered while writing to the `.npmrc` file, an exception will be thrown. Consider wrapping `setNpmAuthTokenForCI` in a `try`/`catch`.
-
-```javascript
-try {
-  setNpmAuthTokenForCI();
-} catch (error) {
-  /* Handle the error. */
-}
-```
-
 ## Debugging
 
 To assist users of `set-npm-auth-token-for-ci` with debugging the behavior of this module we use the [debug](https://www.npmjs.com/package/debug) utility package to print information to the console. To enable debug message printing, the environment variable `DEBUG`, which is the variable used by the `debug` package, must be set to a value configured by the package containing the debug messages to be printed.
@@ -105,19 +100,6 @@ On the Windows command line you may do:
 ```bash
 set DEBUG=set-npm-auth-token-for-ci
 [CONSUMING TOOL]
-```
-
-If you are using the CLI, it would be:
-
-```bash
-DEBUG=set-npm-auth-token-for-ci set-npm-auth-token-for-ci
-```
-
-On the Windows command line you may do:
-
-```bash
-set DEBUG=set-npm-auth-token-for-ci
-set-npm-auth-token-for-ci
 ```
 
 ## Node Support Policy
