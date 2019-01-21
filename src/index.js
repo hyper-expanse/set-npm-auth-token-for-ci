@@ -6,6 +6,7 @@ const localOrHomeNpmrc = require(`local-or-home-npmrc`);
 const registryUrl = require(`registry-url`);
 const path = require(`path`);
 
+/* istanbul ignore next */
 module.exports = () => setNpmAuthTokenForCI(fs, registryUrl);
 module.exports.setNpmAuthTokenForCI = setNpmAuthTokenForCI;
 
@@ -33,6 +34,7 @@ function setNpmAuthTokenForCI(fs, registryUrl) {
   let registry;
   if (packageContents.publishConfig && packageContents.publishConfig.registry) {
     registry = packageContents.publishConfig.registry;
+    registry = registry.slice(-1) === `/` ? registry : `${registry}/`;
   } else {
     const scope = packageContents.name.split(`/`)[0];
     registry = registryUrl(scope);

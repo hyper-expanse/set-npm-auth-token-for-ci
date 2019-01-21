@@ -6,6 +6,7 @@ const chai = require(`chai`);
 const fs = require(`fs`);
 const {afterEach, beforeEach, describe, it} = require(`mocha`);
 const path = require(`path`);
+const registryUrl = require(`registry-url`);
 const sinon = require(`sinon`);
 const sinonChai = require(`sinon-chai`);
 const tmp = require(`tmp`);
@@ -16,7 +17,7 @@ const {setNpmAuthTokenForCI} = setNpmAuthTokenForCIPackage;
 chai.use(sinonChai);
 const {expect} = chai;
 
-describe(`semantic-release-gitlab`, function () {
+describe(`set-npm-auth-token-for-ci`, function () {
   // Setting up our fake project takes longer than the default Mocha timeout.
   this.timeout(20000);
 
@@ -35,6 +36,14 @@ describe(`semantic-release-gitlab`, function () {
       writeFileSync: sinon.stub(),
     };
 
+    /**
+     * We stub out the `registry-url` package because if you run `yarn test` to execute this project's unit tests,
+     * `yarn test` will inject its own registry into the environment in which the tests are executed. Therefore, `yarn test`
+     * will cause the `registry-url` package to return the Yarn package registry, while `npm test`, will cause the
+     * `registry-rul` package to return the Npm package registry.
+     *
+     * We will independently test that `registry-url` returns a package registry with a trailing slash.
+     */
     this.registryUrl = sinon.stub();
     this.registryUrl.returns(`https://registry.npmjs.org/`);
 
@@ -43,6 +52,10 @@ describe(`semantic-release-gitlab`, function () {
 
   afterEach(function () {
     process.chdir(this.cwd);
+  });
+
+  it(`should use 'registry-url' that returns a URL with a trailing slash`, () => {
+    expect(registryUrl()).to.match(/^.*\/$/);
   });
 
   it(`will fail when no 'package.json' file exists`, function () {
@@ -104,6 +117,15 @@ describe(`semantic-release-gitlab`, function () {
       this.fs.readFileSync
         .withArgs(path.join(process.cwd(), `package.json`))
         .returns(`{"name": "test-package", "publishConfig": { "registry": "https://example.com/" }}`);
+
+      this.wrapped();
+      expect(this.fs.writeFileSync).to.have.been.calledWith(this.npmrcFile, `\n//example.com/:_authToken=\${NPM_TOKEN}\n`);
+    });
+
+    it(`will use 'publishConfig' registry value from 'package.json' if set after normalizing ending slash`, function () {
+      this.fs.readFileSync
+        .withArgs(path.join(process.cwd(), `package.json`))
+        .returns(`{"name": "test-package", "publishConfig": { "registry": "https://example.com" }}`);
 
       this.wrapped();
       expect(this.fs.writeFileSync).to.have.been.calledWith(this.npmrcFile, `\n//example.com/:_authToken=\${NPM_TOKEN}\n`);
