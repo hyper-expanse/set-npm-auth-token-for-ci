@@ -4,7 +4,7 @@
 
 const chai = require(`chai`);
 const fs = require(`fs`);
-const {afterEach, beforeEach, describe, it} = require(`mocha`);
+const { afterEach, beforeEach, describe, it } = require(`mocha`);
 const path = require(`path`);
 const registryUrl = require(`registry-url`);
 const sinon = require(`sinon`);
@@ -12,10 +12,10 @@ const sinonChai = require(`sinon-chai`);
 const tmp = require(`tmp`);
 
 const setNpmAuthTokenForCIPackage = require(`../`);
-const {setNpmAuthTokenForCI} = setNpmAuthTokenForCIPackage;
+const { setNpmAuthTokenForCI } = setNpmAuthTokenForCIPackage;
 
 chai.use(sinonChai);
-const {expect} = chai;
+const { expect } = chai;
 
 describe(`set-npm-auth-token-for-ci`, function () {
   // Setting up our fake project takes longer than the default Mocha timeout.
@@ -33,7 +33,7 @@ describe(`set-npm-auth-token-for-ci`, function () {
     // bad tests, or code.
     this.fs = {
       readFileSync: sinon.stub(),
-      writeFileSync: sinon.stub(),
+      writeFileSync: sinon.stub()
     };
 
     /**

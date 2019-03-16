@@ -10,7 +10,7 @@ const path = require(`path`);
 module.exports = () => setNpmAuthTokenForCI(fs, registryUrl);
 module.exports.setNpmAuthTokenForCI = setNpmAuthTokenForCI;
 
-function setNpmAuthTokenForCI(fs, registryUrl) {
+function setNpmAuthTokenForCI (fs, registryUrl) {
   const packageContents = JSON.parse(fs.readFileSync(path.join(process.cwd(), `package.json`)).toString());
 
   const npmrcFile = localOrHomeNpmrc();
