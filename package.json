@@ -35,8 +35,7 @@
   "dependencies": {
     "debug": "^4.0.0",
     "local-or-home-npmrc": "^1.1.0",
-    "registry-url": "^4.0.0",
-    "semistandard": "^13.0.1"
+    "registry-url": "^4.0.0"
   },
   "devDependencies": {
     "@hutson/conventional-changelog-config": "^2.0.0",
@@ -47,6 +46,7 @@
     "npm-publish-git-tag": "^3.0.0",
     "nyc": "^13.0.0",
     "semantic-release-gitlab": "^7.0.0",
+    "semistandard": "^13.0.1",
     "sinon": "^7.0.0",
     "sinon-chai": "^3.2.0",
     "tmp": "^0.0.33"
