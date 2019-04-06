@@ -24,6 +24,16 @@
   "license": "Apache-2.0",
   "main": "src/index.js",
   "name": "@hutson/set-npm-auth-token-for-ci",
+  "renovate": {
+    "extends": [
+      "config:base",
+      ":maintainLockFilesWeekly",
+      ":rebaseStalePrs",
+      ":automergeDigest",
+      ":gitSignOff",
+      ":automergeMinor"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://gitlab.com/hyper-expanse/open-source/set-npm-auth-token-for-ci.git"
