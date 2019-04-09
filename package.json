@@ -31,6 +31,17 @@
     "reporter": "progress"
   },
   "name": "@hutson/set-npm-auth-token-for-ci",
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/cli.js",
+      "src/**/*.spec.js",
+      "src/**/*.mock.js"
+    ]
+  },
   "renovate": {
     "extends": [
       "config:base",
@@ -57,7 +68,6 @@
   },
   "devDependencies": {
     "@hutson/conventional-changelog-config": "^2.0.0",
-    "@hutson/nyc-config": "^2.0.0",
     "chai": "^4.0.2",
     "codecov": "^3.0.0",
     "mocha": "^6.0.0",
