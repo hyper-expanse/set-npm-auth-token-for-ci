@@ -40,6 +40,10 @@
       "src/cli.js",
       "src/**/*.spec.js",
       "src/**/*.mock.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
     ]
   },
   "renovate": {
@@ -70,7 +74,6 @@
     "@hutson/conventional-changelog-config": "^2.0.0",
     "chai": "^4.0.2",
     "mocha": "^6.0.0",
-    "npm-publish-git-tag": "^3.0.0",
     "nyc": "^13.0.0",
     "semantic-release-gitlab": "^7.0.0",
     "semistandard": "^13.0.1",
