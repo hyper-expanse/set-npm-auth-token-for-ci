@@ -8,7 +8,7 @@
   "bugs": "https://gitlab.com/hyper-expanse/open-source/set-npm-auth-token-for-ci/issues",
   "description": "Set authentication token placeholder into `.npmrc` file for use in automated CI processes.",
   "engines": {
-    "node": ">=6.9.0"
+    "node": ">=8.9.0"
   },
   "files": [
     "src/**/!(*.spec).js"
@@ -68,17 +68,17 @@
   "dependencies": {
     "debug": "^4.0.0",
     "local-or-home-npmrc": "^1.1.0",
-    "registry-url": "^4.0.0"
+    "registry-url": "^5.1.0"
   },
   "devDependencies": {
     "@hutson/conventional-changelog-config": "^2.0.0",
     "chai": "^4.0.2",
     "mocha": "^6.0.0",
-    "nyc": "^13.0.0",
+    "nyc": "^14.0.0",
     "semantic-release-gitlab": "^8.0.1",
     "semistandard": "^13.0.1",
     "sinon": "^7.0.0",
     "sinon-chai": "^3.2.0",
-    "tmp": "^0.0.33"
+    "tmp": "^0.1.0"
   }
 }
