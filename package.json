@@ -71,11 +71,9 @@
     "registry-url": "^5.1.0"
   },
   "devDependencies": {
-    "@hutson/conventional-changelog-config": "^2.0.0",
     "chai": "^4.0.2",
     "mocha": "^6.0.0",
     "nyc": "^14.0.0",
-    "semantic-release-gitlab": "^8.0.1",
     "semistandard": "^13.0.1",
     "sinon": "^7.0.0",
     "sinon-chai": "^3.2.0",
