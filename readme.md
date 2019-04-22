@@ -85,9 +85,13 @@ For example, if the package is configured to use our example npm registry, the p
 
 When `npm` or `yarn` need to authenticate, they retrieve the value assigned to `_authToken`, which is `${NPM_TOKEN}`, and then replace `${NPM_TOKEN}` with the value of the `NPM_TOKEN` environment variable.
 
+## Security Disclosure Policy
+
+To report a security vulnerability in this package, or one of it's dependencies, please use the [Tidelift security contact](https://tidelift.com/security) page. Tidelift will coordinate the process to address the vulnerability and disclose the incident to our users.
+
 ## Professional Support
 
-[Professional support for `@hutson/semantic-delivery-gitlab` is available with a Tidelift Subscription](https://tidelift.com/subscription/pkg/npm--hutson-set-npm-auth-token-for-ci?utm_source=npm--hutson-set-npm-auth-token-for-ci&utm_medium=referral&utm_campaign=readme).
+[Professional support for `@hutson/set-npm-auth-token-for-ci` is available with a Tidelift Subscription](https://tidelift.com/subscription/pkg/npm--hutson-set-npm-auth-token-for-ci?utm_source=npm--hutson-set-npm-auth-token-for-ci&utm_medium=referral&utm_campaign=readme).
 
 Tidelift helps make open source sustainable for maintainers while giving companies assurances about security, maintenance, and licensing for their dependencies.
 
