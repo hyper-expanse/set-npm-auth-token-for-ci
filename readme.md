@@ -12,6 +12,8 @@
   - [CLI Tool](#cli-tool)
   - [Programmatically](#programmatically)
   - [How It Works](#how-it-works)
+- [Security Disclosure Policy](#security-disclosure-policy)
+- [Professional Support](#professional-support)
 - [Debugging](#debugging)
 - [Node Support Policy](#node-support-policy)
 - [Contributing](#contributing)
