@@ -93,7 +93,7 @@ To report a security vulnerability in this package, or one of it's dependencies,
 
 ## Professional Support
 
-[Professional support for `@hutson/set-npm-auth-token-for-ci` is available with a Tidelift Subscription](https://tidelift.com/subscription/pkg/npm--hutson-set-npm-auth-token-for-ci?utm_source=npm--hutson-set-npm-auth-token-for-ci&utm_medium=referral&utm_campaign=readme).
+[Professional support for `@hutson/set-npm-auth-token-for-ci` is available with a Tidelift Subscription](https://tidelift.com/subscription/pkg/npm-hutson-set-npm-auth-token-for-ci?utm_source=npm--hutson-set-npm-auth-token-for-ci&utm_medium=referral&utm_campaign=readme).
 
 Tidelift helps make open source sustainable for maintainers while giving companies assurances about security, maintenance, and licensing for their dependencies.
 
