@@ -2,10 +2,10 @@
   "author": {
     "name": "Hutson Betts",
     "email": "hutson@hyper-expanse.net",
-    "url": "https://gitlab.com/hutson"
+    "url": "https://hyper-expanse.net/hutson"
   },
   "bin": "",
-  "bugs": "https://gitlab.com/hyper-expanse/open-source/set-npm-auth-token-for-ci/issues",
+  "bugs": "https://github.com/hyper-expanse/set-npm-auth-token-for-ci/issues",
   "description": "Set authentication token placeholder into `.npmrc` file for use in automated CI processes.",
   "engines": {
     "node": ">=8.9.0"
@@ -13,7 +13,7 @@
   "files": [
     "src/**/!(*.spec).js"
   ],
-  "homepage": "https://gitlab.com/hyper-expanse/open-source/set-npm-auth-token-for-ci#readme",
+  "homepage": "https://github.com/hyper-expanse/set-npm-auth-token-for-ci#readme",
   "keywords": [
     "automation",
     "npmrc",
@@ -62,7 +62,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/hyper-expanse/open-source/set-npm-auth-token-for-ci.git"
+    "url": "https://github.com/hyper-expanse/set-npm-auth-token-for-ci.git"
   },
   "scripts": {
     "test": "semistandard 'src/**/*.js' && nyc mocha src/**/*.spec.js"
