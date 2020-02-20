@@ -8,7 +8,7 @@
   "bugs": "https://github.com/hyper-expanse/set-npm-auth-token-for-ci/issues",
   "description": "Set authentication token placeholder into `.npmrc` file for use in automated CI processes.",
   "engines": {
-    "node": ">=8.9.0"
+    "node": ">=10.13.0"
   },
   "files": [
     "src/**/!(*.spec).js"
