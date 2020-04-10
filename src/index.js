@@ -1,17 +1,17 @@
 'use strict';
 
-const debug = require(`debug`)(`set-npm-auth-token-for-ci`);
-const fs = require(`fs`);
-const localOrHomeNpmrc = require(`local-or-home-npmrc`);
-const registryUrl = require(`registry-url`);
-const path = require(`path`);
+const debug = require('debug')('set-npm-auth-token-for-ci');
+const fs = require('fs');
+const localOrHomeNpmrc = require('local-or-home-npmrc');
+const registryUrl = require('registry-url');
+const path = require('path');
 
 /* istanbul ignore next */
 module.exports = () => setNpmAuthTokenForCI(fs, registryUrl);
 module.exports.setNpmAuthTokenForCI = setNpmAuthTokenForCI;
 
 function setNpmAuthTokenForCI (fs, registryUrl) {
-  const packageContents = JSON.parse(fs.readFileSync(path.join(process.cwd(), `package.json`)).toString());
+  const packageContents = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json')).toString());
 
   const npmrcFile = localOrHomeNpmrc();
   let contents = '';
@@ -34,15 +34,15 @@ function setNpmAuthTokenForCI (fs, registryUrl) {
   let registry;
   if (packageContents.publishConfig && packageContents.publishConfig.registry) {
     registry = packageContents.publishConfig.registry;
-    registry = registry.slice(-1) === `/` ? registry : `${registry}/`;
+    registry = registry.slice(-1) === '/' ? registry : `${registry}/`;
   } else {
-    const scope = packageContents.name.split(`/`)[0];
+    const scope = packageContents.name.split('/')[0];
     registry = registryUrl(scope);
   }
 
   debug(`using ${registry} registry for current package`);
 
-  const authTokenString = `${registry.replace(/^https?:/, ``)}:_authToken=\${NPM_TOKEN}`;
+  const authTokenString = `${registry.replace(/^https?:/, '')}:_authToken=\${NPM_TOKEN}`;
 
   debug(`will set authentication token string in ${npmrcFile}`);
 
